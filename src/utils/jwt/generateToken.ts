@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 require("dotenv").config();
 
-const accessToken_SECRET: string = process.env.ACCESS_TOKEN_SECRET as string;
+const accessToken_SECRET: string = process.env.ACCESS_TOKEN_SECRET as string || 'nextEventAccessTokenSecret8779';
 
-const refreshToken_SECRET: string = process.env.REFRESH_TOKEN_SECRET as string;
+const refreshToken_SECRET: string = process.env.REFRESH_TOKEN_SECRET as string || 'nextEventRefreshTokenSecret8779';
 
 const generateToken = (roleId: string, role: string) => {
     if (!roleId) throw new Error(`${role} ID missing in generateTokens`);

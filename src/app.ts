@@ -19,7 +19,7 @@ class Server {
         }),
             (this.app = express());
         this.port = parseInt(process.env.PORT || "4000");
-        this.frontendUrl = process.env.FRONTEND_URL as string;
+        this.frontendUrl = process.env.FRONTEND_URL as string || 'http://localhost:3000';
         this.corsMethods = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"];
         this.authRoute = new AuthRoute();
 
