@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from 'cors'
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+import AuthRoute from './route/auth.route'
 
 class Server {
 
@@ -33,6 +34,7 @@ class Server {
         this.app.use(
             cors({
                 origin: this.frontendUrl,
+                methods: this.corsMethods,
                 credentials: true,
             })
         );
